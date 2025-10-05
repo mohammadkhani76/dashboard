@@ -39,8 +39,10 @@ label > input {
   border: none;
   font-family: "iranSans";
   caret-color: var(--color-3);
+  color: var(--color-6);
+
   &::placeholder {
-    color: var(--color-6);
+    color: var(--color-5);
   }
   &:focus {
     outline: none;
