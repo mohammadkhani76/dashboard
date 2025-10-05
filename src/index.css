@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "iranSans";
+  src: url(./assets/font/IRANSans.woff);
+}
+:root {
+  --color-1: #05050c;
+  --color-2: #0f1021;
+  --color-3: #42ade2;
+  --color-4: #242534;
+  --color-5: #6a6d9e;
+  --color-6: #fff;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--color-2);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "iranSans";
+}
