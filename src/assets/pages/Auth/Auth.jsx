@@ -2,9 +2,10 @@ import style from "./Auth.module.css";
 import { AnimatedBorder } from "../../components/AnimatedBorder/AnimatedBorder";
 import { SvgLogo } from "../../icons/SvgLogo";
 import { useState } from "react";
-import { LoginForm } from "./_component/LoginForm";
-import { RegisterForm } from "./_component/RegisterForm";
+import { LoginForm } from "./_component/FormType/LoginForm";
+import { RegisterForm } from "./_component/FormType/RegisterForm";
 import { SvgAuthFooter } from "../../icons/SvgAuthFooter";
+import { Button } from "./_component/Button/Button";
 
 export const Auth = () => {
   const [formType, setFormType] = useState("login");
@@ -16,18 +17,28 @@ export const Auth = () => {
           <SvgLogo className={style.auth_container_logo} />
           <div className={style.auth_line}></div>
           <div className={style.auth_switch}>
-            <button
+            <Button
+              text="ورود"
+              className={`${formType === "login" ? style.active : ""}`}
+              onClick={() => setFormType("login")}
+            />
+            {/* <button
               className={`${formType === "login" ? style.active : ""}`}
               onClick={() => setFormType("login")}
             >
               ورود
-            </button>
-            <button
+            </button> */}
+            <Button
+              text="ثبت نام"
+              className={`${formType === "register" ? style.active : ""}`}
+              onClick={() => setFormType("register")}
+            />
+            {/* <button
               className={`${formType === "register" ? style.active : ""}`}
               onClick={() => setFormType("register")}
             >
               ثبت نام
-            </button>
+            </button> */}
           </div>
           {formType == "login" && <LoginForm />}
           {formType == "register" && <RegisterForm />}
