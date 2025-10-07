@@ -1,6 +1,6 @@
 import style from "./FormType.module.css";
-import { SvgPassword } from "../../../../icons/SvgPassword";
-import { SvgEmail } from "../../../../icons/SvgEmail";
+import { SvgPassword } from "../../../../assets/icons/SvgPassword";
+import { SvgEmail } from "../../../../assets/icons/SvgEmail";
 import { Input } from "../Input/Input";
 import { Button } from "../Button/Button";
 

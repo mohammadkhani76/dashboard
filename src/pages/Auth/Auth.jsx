@@ -1,10 +1,10 @@
 import style from "./Auth.module.css";
 import { AnimatedBorder } from "../../components/AnimatedBorder/AnimatedBorder";
-import { SvgLogo } from "../../icons/SvgLogo";
+import { SvgLogo } from "../../assets/icons/SvgLogo";
 import { useState } from "react";
 import { LoginForm } from "./_component/FormType/LoginForm";
 import { RegisterForm } from "./_component/FormType/RegisterForm";
-import { SvgAuthFooter } from "../../icons/SvgAuthFooter";
+import { SvgAuthFooter } from "../../assets/icons/SvgAuthFooter";
 import { Button } from "./_component/Button/Button";
 
 export const Auth = () => {

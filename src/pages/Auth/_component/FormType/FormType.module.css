@@ -57,3 +57,9 @@ label > input {
   cursor: pointer;
   color: var(--color-1);
 }
+.error {
+  color: var(--color-7);
+}
+.success {
+  color: var(--color-8);
+}
