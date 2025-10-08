@@ -10,7 +10,7 @@ export const RegisterForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-
+  const [error, setError] = useState("");
   const emailRegix = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const nameRegex = /^[A-Za-z\s]+$/;
   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
@@ -24,38 +24,47 @@ export const RegisterForm = () => {
   function isValidPassword(Password) {
     return passwordRegex.test(Password);
   }
+  const saveToLocalStorage = (users) => {
+    localStorage.setItem("users", JSON.stringify(users));
+  };
+  const loadFromLocalStorage = () => {
+    return JSON.parse(localStorage.getItem("users")) || [];
+  };
+
   const handelSubmit = (e) => {
     e.preventDefault();
-    const data = {
+    setMessage("");
+    setError("");
+    let users = loadFromLocalStorage();
+
+    if (!name || !email || !password) {
+      setError("باید تمام فیلدها پر شوند");
+      return;
+    }
+    if (
+      !isValidName(name) ||
+      !isValidEmail(email) ||
+      !isValidPassword(password)
+    ) {
+      setError("فرم به درستی پر نشده");
+      return;
+    }
+    const userExist = users.some((u) => u.email === email);
+    if (userExist) {
+      setError("این کاربر قبلا ثبت نام کرده است.");
+      return;
+    }
+    const newUser = {
       name,
       email,
       password,
     };
-
-    if (!name || !email || !password) {
-      setMessage("تمام فیلدها باید پر شوند");
-      return;
-    }
-
-    // if (
-    //   !isValidEmail(email) ||
-    //   !isValidName(name) ||
-    //   !isValidPassword(password)
-    // ) {
-    //   setMessage("فرم به درستی پر نشده");
-    //   return;
-    // } else {
-    //   console.log(data);
-    //   setMessage("فرم ارسال شد");
-    //   form.reset();
-    // }
-    if (isValidEmail(email) && isValidName(name) && isValidPassword(password)) {
-      console.log(data);
-      setMessage("فرم ارسال شد");
-      setName("");
-      setEmail("");
-      setPassword("");
-    }
+    users.push(newUser);
+    saveToLocalStorage(users);
+    setMessage("ثبت‌نام با موفقیت انجام شد");
+    setName("");
+    setEmail("");
+    setPassword("");
   };
   return (
     <>
