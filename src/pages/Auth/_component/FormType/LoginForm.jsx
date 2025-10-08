@@ -9,18 +9,23 @@ export const LoginForm = () => {
     <>
       <div className={style.form_container}>
         <form>
-          <label>
-            <div>
-              <SvgEmail className={style.svg_icon} />
-            </div>
-            <Input type="email" placeholder="ایمیل خود را وارد کنید" />
-          </label>
-          <label>
-            <div>
-              <SvgPassword className={style.svg_icon} />
-            </div>
-            <Input type="password" placeholder="پسورد خود را وارد کنید" />
-          </label>
+          <div className={style.input_wrapper}>
+            <label>
+              <div>
+                <SvgEmail className={style.svg_icon} />
+              </div>
+              <Input type="email" placeholder="ایمیل خود را وارد کنید" />
+            </label>
+          </div>
+          <div className={style.input_wrapper}>
+            <label>
+              <div>
+                <SvgPassword className={style.svg_icon} />
+              </div>
+              <Input type="password" placeholder="پسورد خود را وارد کنید" />
+            </label>
+          </div>
+
           <Button className={style.auth_form_btn} text="ورود" type="submit" />
         </form>
       </div>

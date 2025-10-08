@@ -63,50 +63,57 @@ export const RegisterForm = () => {
         <p className={message ? style.success : ""}>{message}</p>
 
         <form onSubmit={handelSubmit}>
-          <label>
-            <div>
-              <SvgUser className={style.svg_icon} />
-            </div>
-            <Input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="نام خود را وارد کنید"
-            />
+          <div className={style.input_wrapper}>
+            <label>
+              <div>
+                <SvgUser className={style.svg_icon} />
+              </div>
+              <Input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="نام خود را وارد کنید"
+              />
+            </label>
             {!isValidName(name) && name.length > 0 && (
-              <p className={style.error}>نام باید انگلیسی باشد</p>
+              <p className={style.error}>* نام باید انگلیسی باشد.</p>
             )}
-          </label>
-          <label>
-            <div>
-              <SvgEmail className={style.svg_icon} />
-            </div>
-            <Input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="ایمیل خود را وارد کنید"
-            />
+          </div>
+          <div className={style.input_wrapper}>
+            <label>
+              <div>
+                <SvgEmail className={style.svg_icon} />
+              </div>
+              <Input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="ایمیل خود را وارد کنید"
+              />
+            </label>
             {!isValidEmail(email) && email.length > 0 && (
-              <p className={style.error}>ایمیل صحیح نمیباشد</p>
+              <p className={style.error}>* ایمیل صحیح نمیباشد.</p>
             )}
-          </label>
-          <label>
-            <div>
-              <SvgPassword className={style.svg_icon} />
-            </div>
-            <Input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="پسورد خود را وارد کنید"
-            />
+          </div>
+          <div className={style.input_wrapper}>
+            <label>
+              <div>
+                <SvgPassword className={style.svg_icon} />
+              </div>
+              <Input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="پسورد خود را وارد کنید"
+              />
+            </label>
             {!isValidPassword(password) && password.length > 0 && (
               <p className={style.error}>
-                پسورد باید حداقل ۸ کاراکتر، شامل حروف بزرگ و کوچک و عدد باشد
+                * پسورد باید حداقل ۸ کاراکتر، شامل حروف بزرگ و کوچک و عدد باشد.
               </p>
             )}
-          </label>
+          </div>
+
           <Button
             className={style.auth_form_btn}
             text="ثبت نام"
