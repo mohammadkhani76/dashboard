@@ -37,6 +37,7 @@
   width: calc(100% - 60px);
   margin-right: 60px;
 } */
+
 /* ===========================sidebar head ===========================*/
 .sidebar_logo {
   width: 45px;
@@ -48,7 +49,21 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  /* margin-top: 20px; */
+  & button {
+    background-color: transparent;
+    border: none;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    & svg {
+      width: 30px;
+      stroke: var(--color-3);
+    }
+    @media (width < 767px) {
+      display: flex;
+    }
+  }
 }
 
 /*=========================== sidebar center=========================== */
@@ -152,7 +167,7 @@
   }
 }
 
-/*=========================== sidemenu=========================== */
+/*=========================== sidemenu =========================== */
 .sidebar_center_item_sidemenu {
   background-color: var(--color-2);
   width: 200px;
@@ -251,7 +266,7 @@
   cursor: pointer;
 }
 
-/*=========================== sidebar theme=========================== */
+/*=========================== sidebar Theme Button=========================== */
 .sidebar_theme {
   background-color: var(--color-4);
   width: 90%;
@@ -293,6 +308,8 @@
   width: calc(100% - 60px);
   margin-right: 60px;
 }
+
+/* Header */
 .main_header {
   background-color: var(--color-1);
   height: 80px;
@@ -303,6 +320,8 @@
   padding-inline: 15px;
   justify-content: space-between;
 }
+
+/* Header right */
 .main_header_right {
   display: flex;
   align-items: center;
@@ -323,6 +342,7 @@
   }
 }
 
+/* Header center */
 .main_header_center {
   width: 250px;
   height: 40px;
@@ -354,6 +374,8 @@
     }
   }
 }
+
+/* Header left */
 .main_header_left {
   display: flex;
   align-items: center;
@@ -374,6 +396,128 @@
     text-align: center;
     @media (width < 767px) {
       font-size: 14px;
+    }
+  }
+}
+
+/* modal */
+.main_header_modal {
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.main_header_modal_active {
+  visibility: visible;
+  opacity: 1;
+}
+.modal_setting {
+  width: 200px;
+  top: -40px;
+  left: -40px;
+  background-color: var(--color-2);
+  z-index: 5000;
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.modal_setting_avtive {
+  opacity: 1;
+  visibility: visible;
+  top: 40px;
+  left: 40px;
+}
+
+/* Modal Language */
+.modal_setting_top {
+  width: 100%;
+  border-bottom: 1px solid var(--color-6);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  gap: 10px;
+}
+.modal_setting_top_item {
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--color-9);
+  cursor: pointer;
+  border-radius: 10px;
+  padding-inline-end: 10px;
+}
+.modal_setting_top_item_active {
+  background-color: var(--color-1);
+  color: var(--color-6);
+}
+
+/*Modal Theme Button */
+.modal_setting_theme_btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.modal_setting_theme_btn > button {
+  width: 50%;
+  height: 50px;
+  border-radius: 10px;
+  color: var(--color-9);
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+.modal_setting_theme_btn_active {
+  background-color: var(--color-3) !important;
+  color: var(--color-1) !important;
+}
+
+/* Modal Button (Profile & Logout) */
+.modal_setting_bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  gap: 10px;
+}
+
+.modal_setting_bottom_item {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+  color: var(--color-9);
+  padding-inline: 8px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  & svg {
+    stroke: var(--color-9);
+    width: 25px;
+  }
+  &:hover {
+    background-color: var(--color-1);
+    color: var(--color-6);
+    & svg {
+      stroke: var(--color-6);
     }
   }
 }
@@ -452,5 +596,8 @@
   .main_full {
     width: 100%;
     margin-right: 0;
+  }
+  .main_header_center {
+    display: none;
   }
 }

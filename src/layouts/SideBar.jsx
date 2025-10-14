@@ -5,8 +5,9 @@ import style from "./PanelLayout.module.css";
 import { menu } from "../constants/Layout-const";
 import { ProfileSidebar } from "./ProfileSidebar";
 import { ThemeSidebar } from "./ThemeSidebar";
+import { SvgMenu } from "../assets/icons/SvgMenu";
 
-export const SideBar = ({ handleSideBar }) => {
+export const SideBar = ({ handleSideBar, setHandleSideBar }) => {
   const [activeSubMenu, setActiveSubMenu] = useState(-1);
   const handelSubMenu = (index) => {
     if (activeSubMenu == index) {
@@ -21,7 +22,11 @@ export const SideBar = ({ handleSideBar }) => {
         className={`${style.sidebar} ${handleSideBar && style.sidebar_small}`}
       >
         <div className={style.sidebar_header}>
-          <SvgLogo className={style.sidebar_logo} /> <h2>Razi Hospital</h2>
+          <button onClick={() => setHandleSideBar((prev) => !prev)}>
+            <SvgMenu />
+          </button>
+          <SvgLogo className={style.sidebar_logo} />
+          <h2>Razi Hospital</h2>
         </div>
         <div className={style.sideBar_center}>
           <button className={style.sideBar_center_newProject}>
