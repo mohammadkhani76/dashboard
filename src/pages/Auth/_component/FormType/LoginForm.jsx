@@ -4,13 +4,14 @@ import { SvgEmail } from "../../../../assets/icons/SvgEmail";
 import { Input } from "../Input/Input";
 import { Button } from "../Button/Button";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 export const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
-
+  const navigate = useNavigate();
   const loadFromLocalStorage = () => {
     return JSON.parse(localStorage.getItem("users")) || [];
   };
@@ -42,7 +43,8 @@ export const LoginForm = () => {
       setMessage(`خوش آمدید ${validUser.name}`);
       setEmail("");
       setPassword("");
-      window.location.href = "./panel";
+      // window.location.href = "./panel";
+      navigate("/panel");
       return;
     }
     setError("ایمیل یا پسورد اشتباه است");
