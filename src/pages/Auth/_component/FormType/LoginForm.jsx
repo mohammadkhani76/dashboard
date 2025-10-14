@@ -42,7 +42,7 @@ export const LoginForm = () => {
       setMessage(`خوش آمدید ${validUser.name}`);
       setEmail("");
       setPassword("");
-      window.location.href = "https://www.google.com/";
+      window.location.href = "./panel";
       return;
     }
     setError("ایمیل یا پسورد اشتباه است");

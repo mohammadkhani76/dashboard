@@ -16,6 +16,8 @@
   --color-6: #fff;
   --color-7: rgb(255, 0, 0);
   --color-8: rgb(0, 128, 0);
+  --color-9: #afafaf;
+  --color-10: #3498c6c9;
 }
 
 a {
@@ -35,4 +37,8 @@ body {
   min-height: 100vh;
   font-family: "iranSans";
   overflow-x: hidden;
+}
+button,
+input {
+  font-family: "iranSans";
 }

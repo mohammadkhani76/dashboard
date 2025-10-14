@@ -1,12 +1,17 @@
+import { BrowserRouter, Route, Routes } from "react-router";
 import "./App.css";
 import { Auth } from "./pages/Auth/Auth";
+import { PanelLayout } from "./layouts/PanelLayout";
 
 function App() {
   return (
     <>
-      <div className="app">
-        <Auth />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Auth />}></Route>
+          <Route path="/panel" element={<PanelLayout />}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
