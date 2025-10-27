@@ -6,10 +6,18 @@ import { menu } from "../constants/Layout-const";
 import { ProfileSidebar } from "./ProfileSidebar";
 import { ThemeSidebar } from "./ThemeSidebar";
 import { SvgMenu } from "../assets/icons/SvgMenu";
+import { useNavigate } from "react-router";
 
 export const SideBar = ({ handleSideBar, setHandleSideBar }) => {
   const [activeSubMenu, setActiveSubMenu] = useState(-1);
-  const handelSubMenu = (index) => {
+  const navigate = useNavigate();
+  const handelSubMenu = (index, item) => {
+    if (item.path) {
+      // location.href = item.path ;
+      navigate(item.path);
+      setActiveSubMenu(index);
+      return;
+    }
     if (activeSubMenu == index) {
       setActiveSubMenu(-1);
     } else {
@@ -41,7 +49,7 @@ export const SideBar = ({ handleSideBar, setHandleSideBar }) => {
                   activeSubMenu === index && style.sidebar_center_item_active
                 }`}
               >
-                <button onClick={() => handelSubMenu(index)}>
+                <button onClick={() => handelSubMenu(index, item)}>
                   <span>{item.title}</span>
                   {item.icon}
                 </button>
@@ -52,8 +60,16 @@ export const SideBar = ({ handleSideBar, setHandleSideBar }) => {
                 ></button> */}
                 {item.subMenu && (
                   <>
-                    <SubMenu submenu={item.subMenu} />
-                    <SideMenu submenu={item.subMenu} />
+                    <SubMenu
+                      submenu={item.subMenu}
+                      handelSubMenu={handelSubMenu}
+                      parentIndex={index}
+                    />
+                    <SideMenu
+                      submenu={item.subMenu}
+                      handelSubMenu={handelSubMenu}
+                      parentIndex={index}
+                    />
                   </>
                 )}
               </li>
@@ -71,12 +87,16 @@ export const SideBar = ({ handleSideBar, setHandleSideBar }) => {
   );
 };
 
-const SubMenu = ({ submenu }) => {
+const SubMenu = ({ submenu, handelSubMenu, parentIndex }) => {
   return (
     <>
       <div className={style.sidebar_center_item_submenu}>
         {submenu.map((item, index) => (
-          <div key={index} className={style.sidebar_center_item_submenu_item}>
+          <div
+            key={index}
+            onClick={() => handelSubMenu(parentIndex, item)}
+            className={style.sidebar_center_item_submenu_item}
+          >
             {item.title}
           </div>
         ))}
@@ -85,12 +105,16 @@ const SubMenu = ({ submenu }) => {
   );
 };
 
-const SideMenu = ({ submenu }) => {
+const SideMenu = ({ submenu, handelSubMenu, parentIndex }) => {
   return (
     <>
       <div className={style.sidebar_center_item_sidemenu}>
         {submenu.map((item, index) => (
-          <div key={index} className={style.sidebar_center_item_sidemenu_item}>
+          <div
+            key={index}
+            onClick={() => handelSubMenu(parentIndex, item)}
+            className={style.sidebar_center_item_sidemenu_item}
+          >
             {item.title}
           </div>
         ))}

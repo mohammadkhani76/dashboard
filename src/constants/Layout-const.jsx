@@ -8,18 +8,13 @@ export const menu = [
   {
     title: "داشبورد",
     icon: <SvgDashboard />,
-    subMenu: [
-      { title: "صفحه اول" },
-      { title: "صفحه دوم" },
-      { title: "صفحه سوم" },
-      { title: "صفحه چهارم" },
-    ],
+    path: "/panel/dashboard",
   },
   {
     title: "اپلیکیشن",
     icon: <SvgApplication />,
     subMenu: [
-      { title: "صفحه اول" },
+      { title: "مدیریت اپلیکیشن ", path: "/panel/application/management" },
       { title: "صفحه دوم" },
       { title: "صفحه سوم" },
     ],
@@ -46,10 +41,6 @@ export const menu = [
   {
     title: "تنظیمات",
     icon: <SvgSetting />,
-    subMenu: [
-      { title: "صفحه اول" },
-      { title: "صفحه دوم" },
-      { title: "صفحه سوم" },
-    ],
+    path: "/panel/setting",
   },
 ];

@@ -433,7 +433,7 @@
   align-items: center;
   gap: 10px;
 }
-.modal_setting_avtive {
+.modal_setting_active {
   opacity: 1;
   visibility: visible;
   top: 40px;

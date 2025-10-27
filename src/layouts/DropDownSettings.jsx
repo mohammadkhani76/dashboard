@@ -1,13 +1,11 @@
-import { ThemeSidebar } from "./ThemeSidebar";
 import { SvgUser } from "../assets/icons/SvgUser";
 import { SvgLogout } from "../assets/icons/SvgLogout";
 import style from "./PanelLayout.module.css";
-import { useState } from "react";
-
+import { useContext, useState } from "react";
+import { UseLayoutStore } from "../store/LayoutStore";
 export const DropDownSettings = ({ visibleModal, setVisibleModal }) => {
   const [lang, setLang] = useState("fa");
-  const [theme, setTheme] = useState("dark");
-
+  const { theme, setTheme } = UseLayoutStore();
   const langList = [
     {
       title: "فارسی",
@@ -40,7 +38,7 @@ export const DropDownSettings = ({ visibleModal, setVisibleModal }) => {
       {/* Language Setting */}
       <div
         className={`${style.modal_setting}  ${
-          visibleModal && style.modal_setting_avtive
+          visibleModal && style.modal_setting_active
         }`}
       >
         <div className={style.modal_setting_top}>
@@ -59,7 +57,7 @@ export const DropDownSettings = ({ visibleModal, setVisibleModal }) => {
           ))}
         </div>
 
-        {/* Theme Button */}
+        {/* Theme Button with Zustand*/}
         <div className={style.modal_setting_theme_btn}>
           <button
             className={`${
@@ -78,7 +76,6 @@ export const DropDownSettings = ({ visibleModal, setVisibleModal }) => {
             تاریک
           </button>
         </div>
-
         {/* Profile & Logout */}
         <div className={style.modal_setting_bottom}>
           <div className={style.modal_setting_bottom_item}>
