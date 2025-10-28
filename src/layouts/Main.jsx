@@ -7,8 +7,9 @@ export const Main = ({ handleSideBar, setHandleSideBar }) => {
     <>
       <main className={`${style.main} ${handleSideBar && style.main_full}`}>
         <MainHeader setHandleSideBar={setHandleSideBar} />
-        <Outlet />
-
+        <div className={style.mainCont}>
+          <Outlet />
+        </div>
         {/* 
          {children} // اینو تحت عنوان پراپ هم پاس بده به مین
          <Routes>

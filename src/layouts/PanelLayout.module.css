@@ -204,7 +204,7 @@
 
 /*=========================== profile sidebar ===========================*/
 .sidebar_profile {
-  background-color: var(--color-4);
+  background-color: var(--color-2);
   width: 90%;
   height: auto;
   padding: 10px;
@@ -237,7 +237,7 @@
     color: var(--color-6);
   }
   &:hover {
-    background-color: var(--color-2);
+    background-color: var(--color-4);
     cursor: pointer;
   }
 }
@@ -268,7 +268,7 @@
 
 /*=========================== sidebar Theme Button=========================== */
 .sidebar_theme {
-  background-color: var(--color-4);
+  background-color: var(--color-2);
   width: 90%;
   padding: 8px;
   border-radius: 10px;
@@ -521,7 +521,10 @@
     }
   }
 }
-
+/* main */
+.mainCont {
+  padding: 20px;
+}
 /* =========================== small ===========================*/
 .sidebar_small .sidebar_header h2 {
   display: none;

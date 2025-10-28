@@ -13,12 +13,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Auth />}></Route>
           <Route path="/panel" element={<PanelLayout />}>
+            <Route index element={<Dashboard />} />
+            <Route path="dashboard" element={<Dashboard />} />
             <Route
               path="application/management"
               element={<ApplicationManagement />}
             />
             <Route path="setting" element={<Settings />} />
-            <Route path="dashboard" element={<Dashboard />} />
           </Route>
         </Routes>
       </BrowserRouter>
