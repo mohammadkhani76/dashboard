@@ -6,8 +6,8 @@ export const ProfileSidebar = () => {
       <div className={style.sidebar_profile}>
         <div className={style.sidebar_profile_info}>
           <div>
-            <p>نازنین خانی</p>
-            <p>khani@gmail.com</p>
+            <p>User name </p>
+            <p>User@gmail.com</p>
           </div>
           <div>
             <img src={profileImg} alt="profile-img" />

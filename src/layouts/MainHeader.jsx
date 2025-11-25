@@ -40,8 +40,8 @@ export const MainHeader = ({ setHandleSideBar }) => {
         >
           <img src={profileImg} alt="profile" />
           <div>
-            <span>نازنین خانی</span>
-            <span>khani@gmail.com</span>
+            <span>User name </span>
+            <span>User@gmail.com</span>
           </div>
         </div>
       </div>
