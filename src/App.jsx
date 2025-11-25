@@ -11,8 +11,8 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Auth />}></Route>
-          <Route path="/panel" element={<PanelLayout />}>
+          <Route path="/auth" element={<Auth />}></Route>
+          <Route path="/" element={<PanelLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route
