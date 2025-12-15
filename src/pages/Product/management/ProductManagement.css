@@ -1,0 +1,212 @@
+.productWrapper {
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+}
+.product-head {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  & button {
+    width: 200px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 10px;
+    background: var(--color-3);
+    border: none;
+    & svg {
+      width: 20px;
+      stroke: var(--color-1);
+    }
+    @media (width < 767px) {
+      width: 100%;
+    }
+  }
+}
+.product-list .rdt_Table {
+  background-color: transparent;
+}
+
+.product-list .rdt_TableHeadRow {
+  background-color: var(--color-2) !important;
+  color: var(--color-6) !important;
+  border-radius: 7px !important;
+}
+
+.product-list .rdt_TableRow {
+  background-color: var(--color-4);
+  color: var(--color-6);
+  margin-block: 5px;
+  border-radius: 7px;
+  border: none;
+}
+
+.rdt_Pagination {
+  background-color: var(--color-2) !important;
+  color: var(--color-6) !important;
+  border-radius: 7px;
+}
+
+.product-list .rdt_TableRow:hover {
+  background-color: transparent;
+  color: var(--color-3);
+  border-color: var(--color-3);
+  outline: none;
+}
+.product-list .product-list-name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-block: 5px;
+  & img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+  }
+}
+.product-list .product-list-tag-enable {
+  background-color: var(--color-8);
+  color: var(--color-1);
+  border-radius: 10px;
+  padding: 4px;
+  width: 70px;
+  display: block;
+  text-align: center;
+}
+.product-list .product-list-tag-disable {
+  background-color: var(--color-7);
+  color: var(--color-1);
+  border-radius: 10px;
+  padding: 4px;
+  width: 70px;
+  display: block;
+  text-align: center;
+}
+
+.product-list .product-list-btn {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-10);
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & svg {
+    width: 30px;
+    height: 30px;
+    stroke: var(--color-6);
+  }
+}
+/* Filter */
+.product-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+/* search */
+.product-filter-search {
+  width: 200px;
+  height: 45px;
+  border: 1px solid var(--color-4);
+  border-radius: 10px;
+}
+.product-filter-search form {
+  display: flex;
+}
+.product-filter-search input {
+  width: calc(100% - 40px);
+  height: 45px;
+  padding-inline-start: 10px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: var(--color-6);
+}
+.product-filter-search-icon {
+  width: 40px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-filter-search-icon svg {
+  width: 30px;
+  height: 30px;
+  stroke: var(--color-9);
+}
+/* status */
+.product-filter-status {
+  width: 200px;
+  padding: 5px;
+  border: 1px solid var(--color-4);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+.product-filter-status-btn {
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  color: var(--color-6);
+}
+.product-filter-status-btn-active {
+  background-color: var(--color-3);
+  color: var(--color-1);
+}
+/* date */
+.product-filter-date {
+  width: 200px;
+}
+.product-filter-date .rmdp-container {
+  width: 100%;
+}
+.product-filter-date .rmdp-container input {
+  width: 100%;
+  height: 45px;
+  border-color: var(--color-4);
+  background-color: transparent;
+  text-align: center;
+  color: var(--color-6);
+}
+.product-filter-date .rmdp-calendar {
+  background-color: var(--color-2);
+}
+.product-filter-date .rmdp-header-values {
+  color: var(--color-6);
+}
+.product-filter-date .rmdp-day {
+  color: var(--color-6);
+}
+.product-filter-date .rmdp-day.rmdp-today span {
+  color: var(--color-1);
+}
+.product-filter-date .rmdp-shadow {
+  box-shadow: 0 0 5px #4f4f4f;
+}
+.product-filter-date .rmdp-wrapper {
+  border-radius: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .product-head {
+    & button {
+      width: 100%;
+    }
+  }
+  .product-filter-search,
+  .product-filter-status,
+  .product-filter-date {
+    width: 100%;
+  }
+}

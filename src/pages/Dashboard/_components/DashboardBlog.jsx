@@ -1,15 +1,17 @@
+import { useState } from "react";
 import ImgBlog from "../../../assets/pic/blog.png";
 import style from "./../Dashboard.module.css";
 
 export const DashboardBlog = () => {
-  const handelTextLimit = (text, maxlength) => {
-    if (!text) return "";
-    return text.length > maxlength ? text.slice(0, maxlength) + "..." : text;
-  };
+  // const handelTextLimit = (text, maxlength) => {
+  //   if (!text) return "";
+  //   return text.length > maxlength ? text.slice(0, maxlength) + "..." : text;
+  // };
   const text = `آزمون‌های تمرینی ابزارهای ضروری برای تقویت دانش و بهبود مهارت‌های
   آزمون‌دهی هستند. با شبیه‌سازی شرایط واقعی امتحان، این آزمون‌ها کمک
   می‌کنند تا نقاط قوت و ضعف شناسایی شوند، اعتماد به نفس افزایش یابد
   و اضطراب کاهش پیدا کند.`;
+  const [paragraph, setParagraph] = useState(text);
   return (
     <>
       <div className={style.dashLeft}>
@@ -17,7 +19,12 @@ export const DashboardBlog = () => {
           <img src={ImgBlog} alt="blog" />
           <div className={style.dashLeftItemDes}>
             <h4>آزمون‌های تمرینی: کلیدی برای موفقیت</h4>
-            <p>{handelTextLimit(text, 81)}</p>
+            {/* <p>{handelTextLimit(text, 81)}</p> */}
+            <p>
+              {paragraph.length > 81
+                ? paragraph.slice(0, 81) + "..."
+                : paragraph}
+            </p>
           </div>
         </div>
       </div>

@@ -2,9 +2,10 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import "./App.css";
 import { Auth } from "./pages/Auth/Auth";
 import { PanelLayout } from "./layouts/PanelLayout";
-import { ApplicationManagement } from "./pages/Application/ApplicationManagement";
 import { Settings } from "./pages/Setting/Settings";
 import { Dashboard } from "./pages/Dashboard/Dashboard";
+import { ProductManagement } from "./pages/Product/management/ProductManagement";
+import { ProductAdd } from "./pages/Product/add/ProductAdd";
 
 function App() {
   return (
@@ -15,10 +16,8 @@ function App() {
           <Route path="/" element={<PanelLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="dashboard" element={<Dashboard />} />
-            <Route
-              path="application/management"
-              element={<ApplicationManagement />}
-            />
+            <Route path="product/management" element={<ProductManagement />} />
+            <Route path="product/add" element={<ProductAdd />} />
             <Route path="setting" element={<Settings />} />
           </Route>
         </Routes>
